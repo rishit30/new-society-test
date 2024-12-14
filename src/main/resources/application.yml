@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:redshift://your-redshift-cluster-identifier.region.redshift.amazonaws.com:5439/dev
+    username: ${REDSHIFT_USERNAME}
+    password: ${REDSHIFT_PASSWORD}
+    driver-class-name: com.amazon.redshift.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+aws:
+  redshift:
+    region: your-aws-region
