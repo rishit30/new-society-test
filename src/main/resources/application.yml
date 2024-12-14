@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:redshift://${REDSHIFT_HOST}:5439/${REDSHIFT_DATABASE}
+    username: ${REDSHIFT_USERNAME}
+    password: ${REDSHIFT_PASSWORD}
+    driver-class-name: com.amazon.redshift.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+
+aws:
+  region: ${AWS_REGION}
+  redshift:
+    cluster-identifier: ${REDSHIFT_CLUSTER_ID}
