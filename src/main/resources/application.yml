@@ -1,10 +1,9 @@
 spring:
   datasource:
-    url: jdbc:redshift://${REDSHIFT_HOST}:5439/${REDSHIFT_DATABASE}
+    url: jdbc:redshift://your-redshift-cluster-identifier.region.redshift.amazonaws.com:5439/dev
     username: ${REDSHIFT_USERNAME}
     password: ${REDSHIFT_PASSWORD}
     driver-class-name: com.amazon.redshift.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,6 +15,5 @@ server:
   port: 8080
 
 aws:
-  region: ${AWS_REGION}
   redshift:
-    cluster-identifier: ${REDSHIFT_CLUSTER_ID}
+    region: your-aws-region
